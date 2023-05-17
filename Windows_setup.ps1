@@ -1,3 +1,8 @@
+$URL="https://github.com/lehieuhuy/Burp-Suite/archive/refs/heads/main.zip
+"echo $(Invoke-Webrequest -Uri $URL -OutFile "Burp-main.zip")
+echo $(Expand-Archive -LiteralPath 'Burp-main.zip' -DestinationPath 'Burp')
+echo $(cd Burp)
+echo $(Burp-Suite-main)
 echo $(Set-ExecutionPolicy Unrestricted -verbose)
 # Check JDK-18 Availability or Download JDK-19
 $jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 19*"
