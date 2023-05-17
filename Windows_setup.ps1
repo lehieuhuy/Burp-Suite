@@ -1,4 +1,4 @@
-$URL="https://github.com/lehieuhuy/Burp-Suite/archive/refs/heads/main.zip
+$URL="https://github.com/lehieuhuy/Burp-Suite/archive/refs/heads/main.zip"
 "echo $(Invoke-Webrequest -Uri $URL -OutFile "Burp-main.zip")
 echo $(Expand-Archive -LiteralPath 'Burp-main.zip' -DestinationPath 'Burp')
 echo $(cd Burp)
