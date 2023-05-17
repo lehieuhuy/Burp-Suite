@@ -1,5 +1,4 @@
 echo $(Set-ExecutionPolicy Unrestricted -verbose)
-echo $(cd Burp-Suite)
 # Check JDK-18 Availability or Download JDK-19
 $jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 19*"
 if (!($jdk20)){
