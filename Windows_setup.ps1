@@ -1,16 +1,15 @@
 echo $(Set-ExecutionPolicy Unrestricted -verbose)
-echo $(git clone https://github.com/lehieuhuy/Burp-Suite.git)
 echo $(cd Burp-Suite)
 # Check JDK-18 Availability or Download JDK-19
 $jdk20 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 19*"
 if (!($jdk20)){
-    echo "`t`tDownnloading Java JDK-19 ...."
-    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-19.exe    
-    echo "`n`t`tJDK-19 Downloaded, lets start the Installation process"
-    start -wait jdk-19.exe
-    rm jdk-19.exe
+    echo "`t`tDownnloading Java JDK-20 ...."
+    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.exe    
+    echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
+    start -wait jdk-20.exe
+    rm jdk-20.exe
 }else{
-    echo "Required JDK-19 is Installed"
+    echo "Required JDK-20 is Installed"
     $jdk20
 }
 # Downloading Burp Suite Professional
