@@ -9,10 +9,10 @@ echo $(cd Burp-Suite-main)
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
     echo "`t`tDownnloading Java JDK-20 ...."
-    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.exe    
+    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.msi    
     echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
-    start -wait jdk-20.exe
-    rm jdk-20.exe
+    start -wait jdk-20.msi
+    rm jdk-20.msi
 }else{
     echo "Required JDK-20 is Installed"
     $jdk17
