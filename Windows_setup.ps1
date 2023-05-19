@@ -47,7 +47,7 @@ add-content Burp-Suite-Pro.vbs "Set WshShell = Nothing"
 echo "`nBurp-Suite-Pro.vbs file is created."
 
 # Remove Additional files
-rm Kali_Linux_Setup.sh
+rm Linux_Setup.sh
 del -Recurse -Force .\.github\
 
 
