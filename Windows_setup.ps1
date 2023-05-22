@@ -1,15 +1,15 @@
-echo $(Set-ExecutionPolicy Unrestricted -verbose)
+Set-ExecutionPolicy Unrestricted -verbose
 $URL="https://github.com/lehieuhuy/Burp-Suite/archive/refs/heads/main.zip"
-echo $(Invoke-Webrequest -Uri $URL -OutFile "Burp-main.zip")
-echo $(Expand-Archive -LiteralPath 'Burp-main.zip' -DestinationPath 'Burp')
-echo $(cd Burp)
-echo $(cd Burp-Suite-main)
+Invoke-Webrequest -Uri $URL -OutFile "Burp-main.zip")
+Expand-Archive -LiteralPath 'Burp-main.zip' -DestinationPath 'Burp'
+cd Burp
+cd Burp-Suite-main
 
 # Check JDK-17 Availability or Download JDK-20
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
     echo "`t`tDownnloading Java JDK-20 ...."
-    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.msi    
+    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.msi"    
     echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
     start -wait jdk-20.msi
     rm jdk-20.msi
@@ -30,6 +30,9 @@ if (Test-Path Burp-Suite-Pro.jar){
     wget "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -O "Burp-Suite-Pro.jar"
     echo "`nBurp Suite Professional is Downloaded.`n"
 }
+#Downloading Jython.jar and Jruby.jar for Environment
+Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar -OutFile "Jython.jar" -verbose
+Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.2.0/jruby-complete-9.4.2.0.jar -OutFile "Jruby.jar" -verbose
 
 # Creating Burp.bat file with command for execution
 if (Test-Path burp.bat) {rm burp.bat} 
