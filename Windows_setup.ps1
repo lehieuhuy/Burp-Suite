@@ -1,10 +1,3 @@
-Set-ExecutionPolicy Unrestricted -verbose
-$URL="https://github.com/lehieuhuy/Burp-Suite/archive/refs/heads/main.zip"
-Invoke-Webrequest -Uri $URL -OutFile "Burp-main.zip")
-Expand-Archive -LiteralPath 'Burp-main.zip' -DestinationPath 'Burp'
-cd Burp
-cd Burp-Suite-main
-
 # Check JDK-17 Availability or Download JDK-20
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
