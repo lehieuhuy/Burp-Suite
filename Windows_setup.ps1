@@ -1,3 +1,5 @@
+#Set Execution Policy for Unrestricted
+echo $(Set-ExecutionPolicy Unrestricted)
 # Check JDK-17 Availability or Download JDK-20
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
