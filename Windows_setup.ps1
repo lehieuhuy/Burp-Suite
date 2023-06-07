@@ -1,5 +1,12 @@
 #Set Execution Policy for Unrestricted
 echo $(Set-ExecutionPolicy Unrestricted)
+
+
+# Set Wget Progress to Silent, Becuase it slows down Downloading by +50x
+echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
+$ProgressPreference = 'SilentlyContinue'
+
+
 # Check JDK-17 Availability or Download JDK-20
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
@@ -12,6 +19,7 @@ if (!($jdk17)){
     echo "Required JDK-20 is Installed"
     $jdk17
 }
+
 # Downloading Burp Suite Professional
 if (Test-Path Burp-Suite-Pro.jar){
     echo "Burp Suite Professional JAR file is available.`nChecking its Integrity ...."
