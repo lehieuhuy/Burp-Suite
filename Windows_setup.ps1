@@ -16,7 +16,7 @@ if (!($jdk17)){
     start -wait jdk-20.msi
     rm jdk-20.msi
 }else{
-    echo "Required JDK-20 is Installed"
+    echo $("Required JDK-20 is Installed")
     $jdk17
 }
 
@@ -33,6 +33,8 @@ if (Test-Path Burp-Suite-Pro.jar){
     wget "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -O "Burp-Suite-Pro.jar"
     echo "`nBurp Suite Professional is Downloaded.`n"
 }
+
+
 #Downloading Jython.jar and Jruby.jar for Environment
 Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar -OutFile "Jython.jar" -verbose
 Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.2.0/jruby-complete-9.4.2.0.jar -OutFile "Jruby.jar" -verbose
