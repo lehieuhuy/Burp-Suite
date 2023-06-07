@@ -15,10 +15,11 @@ if (!($jdk17)){
     echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
     start -wait jdk-20.msi
     rm jdk-20.msi
-}else{
+}
+else{
     echo $("Required JDK-20 is Installed")
     $jdk17
-}
+    }
 
 # Downloading Burp Suite Professional
 if (Test-Path Burp-Suite-Pro.jar){
