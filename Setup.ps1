@@ -1,3 +1,13 @@
+# Name is Important
+echo "
+                #####    #     #    #####    #     #   #     # 
+               #     #   ##    #   #     #   #     #   ##    # 
+               #         # #   #   #         #     #   # #   # 
+                #####    #  #  #   #  ####   #  #  #   #  #  # 
+                     #   #   # #   #     #   #  #  #   #   # # 
+               #     #   #    ##   #     #   #  #  #   #    ## 
+                #####    #     #    #####     ## ##    #     # 
+"
 # Set Wget Progress to Silent, Becuase it slows down Downloading by +50x
 echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
 $ProgressPreference = 'SilentlyContinue'
