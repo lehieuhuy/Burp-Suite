@@ -24,6 +24,9 @@ rm jdk-20.msi
 echo "`Downloading Burp Suite Professional v2022.8.2 ...."
 Invoke-Webrequest "https://portswigger.net/burp/releases/startdownload?product=pro&version=2022.8.2&type=Jar" -OutFile "Burp-Suite-Pro.jar"
 
+#Downloading Jython.jar and Jruby.jar for Environment
+Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar -OutFile "Jython.jar" -verbose
+Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.2.0/jruby-complete-9.4.2.0.jar -OutFile "Jruby.jar" -verbose
 
 # Creating Burp.bat file with command for execution
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
@@ -52,7 +55,3 @@ java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java
 echo "`n`t`t 1. Please download latest Burp Suite Professional Jar file from :-:"
 echo "`n`t`t https://portswigger.net/burp/releases/startdownload?product=pro&version=&type=Jar"
 echo "`n`t`t 2. Replace the existing Burp-Suite-Pro.jar file with downloaded jar file. `n`t Keep previous file name"
-
-#Downloading Jython.jar and Jruby.jar for Environment
-Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar -OutFile "Jython.jar" -verbose
-Invoke-Webrequest -Uri https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.2.0/jruby-complete-9.4.2.0.jar -OutFile "Jruby.jar" -verbose
