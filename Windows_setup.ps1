@@ -2,7 +2,7 @@
 echo $(Set-ExecutionPolicy Unrestricted)
 
 
-# Set Wget Progress to Silent, Becuase it slows down Downloading by +50x
+# Set Progress to Silent, Becuase it slows down Downloading by +50x
 echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
 $ProgressPreference = 'SilentlyContinue'
 
@@ -11,8 +11,8 @@ $ProgressPreference = 'SilentlyContinue'
 $jdk17 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java(TM) SE Development Kit 20*"
 if (!($jdk17)){
     echo "`t`tDownnloading Java JDK-20 ...."
-    wget "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -O jdk-20.msi    
-    echo "`n`t`tJDK-20 Downloaded, lets start the Installation process"
+    Invoke-Webrequest "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -OutFile jdk-20.msi    
+    echo "JDK-20 Downloaded, lets start the Installation process"
     start -wait jdk-20.msi
     rm jdk-20.msi
 }
@@ -26,12 +26,12 @@ if (Test-Path Burp-Suite-Pro.jar){
     echo "Burp Suite Professional JAR file is available.`nChecking its Integrity ...."
     if (((Get-Item Burp-Suite-Pro.jar).length/1MB) -lt 500 ){
         echo "`n`t`tFiles Seems to be corrupted `n`t`tDownloading Burp Suite Professional v2022.8.2 ...."
-        wget "https://portswigger.net/burp/releases/startdownload?product=pro&version=2022.8.2&type=Jar" -O "Burp-Suite-Pro.jar"
+        Invoke-Webrequest "https://portswigger.net/burp/releases/startdownload?product=pro&version=2022.8.2&type=Jar" -OutFile "Burp-Suite-Pro.jar"
         echo "`nBurp Suite Professional is Downloaded.`n"
     }else {echo "File Looks fine. Lets proceed for Execution"}
 }else {
     echo "`n`t`tDownloading Burp Suite Professional v2022.8.2 ...."
-    wget "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -O "Burp-Suite-Pro.jar"
+    Invoke-Webrequest "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -OutFile "Burp-Suite-Pro.jar"
     echo "`nBurp Suite Professional is Downloaded.`n"
 }
 
