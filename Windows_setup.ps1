@@ -13,22 +13,29 @@ echo "
 echo "Setting Wget Progress to Silent, Becuase it slows down Downloading by +50x`n"
 $ProgressPreference = 'SilentlyContinue'
 
+#Initial varibles URL Download
+$burp="https://drive.google.com/uc?id=1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8&authuser=0&export=download&confirm=t"
+$conf="https://drive.google.com/uc?id=1IDVWmtwARSNimAVSOQ-242-BPea5bmrM&authuser=0&export=download&confirm=t"
+$jdk="https://drive.google.com/uc?id=1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV&authuser=0&export=download&confirm=t"
+$jruby="https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.3.0/jruby-complete-9.4.3.0.jar"
+$jython="https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar"
+
 # Install JDK and JRE
 echo "Downnloading Java JDK-20 ...."
-Invoke-Webrequest -Uri "https://drive.google.com/file/d/1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV/view?usp=sharing" -OutFile jdk-20.msi -verbose
+Invoke-Webrequest -Uri $jdk -OutFile jdk-20.msi -verbose
 echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
 
 #Downloading Configure BAPP
 echo "Downloading Configure BAPP File"
-Invoke-Webrequest -Uri "https://drive.google.com/file/d/1IDVWmtwARSNimAVSOQ-242-BPea5bmrM/view?usp=sharing" -OutFile Conf.json -verbose
+Invoke-Webrequest -Uri $conf -OutFile Conf.json -verbose
 # Downloading Burp Suite Professional
 echo "`Downloading Burp Suite Professional v2022.8.2 ...."
-Invoke-Webrequest -Uri "https://drive.google.com/file/d/1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8/view?usp=sharing" -OutFile Burp-Suite-Pro.jar -verbose
+Invoke-Webrequest -Uri $burp -OutFile Burp-Suite-Pro.jar -verbose
 
 #Downloading Jython.jar and Jruby.jar for Environment
-Invoke-Webrequest -Uri "https://drive.google.com/file/d/1yZX0bg5wyINRz9tgpnBQENnI4O1MdDk3/view?usp=sharing" -OutFile Jython.jar -verbose
-Invoke-Webrequest -Uri "https://drive.google.com/file/d/1ZwslHX99GNM4FglogpbYlEnE2pejHfdo/view?usp=sharing" -OutFile Jruby.jar -verbose
+Invoke-Webrequest -Uri $jython -OutFile Jython.jar -verbose
+Invoke-Webrequest -Uri $jyruby -OutFile Jruby.jar -verbose
 
 # Creating Burp.bat file with command for execution
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
