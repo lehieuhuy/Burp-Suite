@@ -27,8 +27,8 @@ echo "`Downloading Burp Suite Professional v2022.8.2 ...."
 Invoke-Webrequest -Uri "https://drive.google.com/file/d/1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8/view?usp=sharing" -OutFile "Burp-Suite-Pro.jar" -verbose
 
 #Downloading Jython.jar and Jruby.jar for Environment
-Invoke-Webrequest -Uri https://drive.google.com/file/d/1yZX0bg5wyINRz9tgpnBQENnI4O1MdDk3/view?usp=sharing -OutFile "Jython.jar" -verbose
-Invoke-Webrequest -Uri https://drive.google.com/file/d/1ZwslHX99GNM4FglogpbYlEnE2pejHfdo/view?usp=sharing -OutFile "Jruby.jar" -verbose
+Invoke-Webrequest -Uri "https://drive.google.com/file/d/1yZX0bg5wyINRz9tgpnBQENnI4O1MdDk3/view?usp=sharing -OutFile "Jython.jar" -verbose
+Invoke-Webrequest -Uri "https://drive.google.com/file/d/1ZwslHX99GNM4FglogpbYlEnE2pejHfdo/view?usp=sharing -OutFile "Jruby.jar" -verbose
 
 # Creating Burp.bat file with command for execution
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
