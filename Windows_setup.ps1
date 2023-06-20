@@ -15,16 +15,16 @@ $ProgressPreference = 'SilentlyContinue'
 
 # Install JDK and JRE
 echo "Downnloading Java JDK-20 ...."
-Invoke-Webrequest "https://drive.google.com/file/d/1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV/view?usp=sharing" -OutFile jdk-20.msi    
+Invoke-Webrequest -Uri "https://drive.google.com/file/d/1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV/view?usp=sharing" -OutFile jdk-20.msi -verbose
 echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
 
 #Downloading Configure BAPP
 echo "Downloading Configure BAPP"
-Invoke-Webrequest "https://drive.google.com/file/d/1IDVWmtwARSNimAVSOQ-242-BPea5bmrM/view?usp=sharing" -OutFile "Conf.json"
+Invoke-Webrequest -Uri "https://drive.google.com/file/d/1IDVWmtwARSNimAVSOQ-242-BPea5bmrM/view?usp=sharing" -OutFile "Conf.json" -verbose
 # Downloading Burp Suite Professional
 echo "`Downloading Burp Suite Professional v2022.8.2 ...."
-Invoke-Webrequest "https://drive.google.com/file/d/1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8/view?usp=sharing" -OutFile "Burp-Suite-Pro.jar"
+Invoke-Webrequest -Uri "https://drive.google.com/file/d/1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8/view?usp=sharing" -OutFile "Burp-Suite-Pro.jar" -verbose
 
 #Downloading Jython.jar and Jruby.jar for Environment
 Invoke-Webrequest -Uri https://drive.google.com/file/d/1yZX0bg5wyINRz9tgpnBQENnI4O1MdDk3/view?usp=sharing -OutFile "Jython.jar" -verbose
