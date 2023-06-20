@@ -15,7 +15,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 # Install JDK and JRE
 echo "Downnloading Java JDK-20 ...."
-Invoke-Webrequest "https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi" -OutFile jdk-20.msi    
+Invoke-Webrequest "https://drive.google.com/file/d/1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV/view?usp=sharing" -OutFile jdk-20.msi    
 echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
 rm jdk-20.msi
