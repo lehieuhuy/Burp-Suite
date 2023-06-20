@@ -20,7 +20,7 @@ echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
 
 #Downloading Configure BAPP
-echo "Downloading Configure BAPP"
+echo "Downloading Configure BAPP File"
 Invoke-Webrequest -Uri "https://drive.google.com/file/d/1IDVWmtwARSNimAVSOQ-242-BPea5bmrM/view?usp=sharing" -OutFile "Conf.json" -verbose
 # Downloading Burp Suite Professional
 echo "`Downloading Burp Suite Professional v2022.8.2 ...."
