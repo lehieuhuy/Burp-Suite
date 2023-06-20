@@ -18,7 +18,6 @@ echo "Downnloading Java JDK-20 ...."
 Invoke-Webrequest "https://drive.google.com/file/d/1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV/view?usp=sharing" -OutFile jdk-20.msi    
 echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
-rm jdk-20.msi
 
 #Downloading Configure BAPP
 echo "Downloading Configure BAPP"
