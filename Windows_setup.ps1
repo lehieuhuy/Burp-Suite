@@ -35,7 +35,7 @@ Invoke-Webrequest -Uri $burp -OutFile Burp-Suite-Pro.jar -verbose
 
 #Downloading Jython.jar and Jruby.jar for Environment
 Invoke-Webrequest -Uri $jython -OutFile Jython.jar -verbose
-Invoke-Webrequest -Uri $jyruby -OutFile Jruby.jar -verbose
+Invoke-Webrequest -Uri $jruby -OutFile Jruby.jar -verbose
 
 # Creating Burp.bat file with command for execution
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
