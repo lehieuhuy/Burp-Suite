@@ -37,6 +37,10 @@ Invoke-Webrequest -Uri $burp -OutFile Burp-Suite-Pro.jar -verbose
 Invoke-Webrequest -Uri $jython -OutFile Jython.jar -verbose
 Invoke-Webrequest -Uri $jruby -OutFile Jruby.jar -verbose
 
+# Downloading and install firefox
+iwr -Uri https://www.mozilla.org/vi/firefox/download/thanks/ -OutFile firefox.exe -verbose
+start -wait firefox.exe
+
 # Creating Burp.bat file with command for execution
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
 $path | add-content -path Burp.bat
