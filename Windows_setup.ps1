@@ -1,12 +1,14 @@
 # Name is Important
 echo "
-                #####    #     #    #####    #     #   #     # 
-               #     #   ##    #   #     #   #     #   ##    # 
-               #         # #   #   #         #     #   # #   # 
-                #####    #  #  #   #  ####   #  #  #   #  #  # 
-                     #   #   # #   #     #   #  #  #   #   # # 
-               #     #   #    ##   #     #   #  #  #   #    ## 
-                #####    #     #    #####     ## ##    #     # 
+write-host " #     # #     # #     #    #       ####### " -foregroundcolor "Red"
+write-host " #     # #     #  #   #     #       #       " -foregroundcolor "Red"
+write-host " #     # #     #   # #      #       #       " -foregroundcolor "White"
+write-host " ####### #     #    #       #       #####   " -foregroundcolor "White"
+write-host " #     # #     #    #       #       #       " -foregroundcolor "Green"
+write-host " #     # #     #    #       #       #       " -foregroundcolor "Green"
+write-host " #     #  #####     #       ####### ####### " -foregroundcolor "Yellow"
+                                           
+
 "
 
 # Set Wget Progress to Silent, Becuase it slows down Downloading by +50x
