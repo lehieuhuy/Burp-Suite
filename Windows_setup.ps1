@@ -14,7 +14,6 @@ $ProgressPreference = 'SilentlyContinue'
 
 #Initial varibles URL Download
 $burp="https://drive.google.com/uc?id=1_KkjelkI8WoS0S6wBxfJHI3QszZTCLw8&authuser=0&export=download&confirm=t"
-$conf="https://drive.google.com/uc?id=1IDVWmtwARSNimAVSOQ-242-BPea5bmrM&authuser=0&export=download&confirm=t"
 $jdk="https://drive.google.com/uc?id=1gYoD2X_ljWAp5TrT7fr3udcmFZtf8RTV&authuser=0&export=download&confirm=t"
 $jruby="https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.3.0/jruby-complete-9.4.3.0.jar"
 $jython="https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar"
