@@ -24,9 +24,6 @@ Invoke-Webrequest -Uri $jdk -OutFile jdk-20.msi -verbose
 echo "JDK-20 Downloaded, lets start the Installation process"
 start -wait jdk-20.msi
 
-#Downloading Configure BAPP
-echo "Downloading Configure BAPP File"
-Invoke-Webrequest -Uri $conf -OutFile Conf.json -verbose
 # Downloading Burp Suite Professional
 echo "`Downloading Burp Suite Professional v2022.8.2 ...."
 Invoke-Webrequest -Uri $burp -OutFile Burp-Suite-Pro.jar -verbose
